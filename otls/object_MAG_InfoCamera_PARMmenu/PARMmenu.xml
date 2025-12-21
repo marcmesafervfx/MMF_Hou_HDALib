@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuDocument>
+
+      <menuBar>
+        <subMenu>
+          <label>Info Tool</label>
+          <titleItem>
+            <label>Info Tool</label>
+          </titleItem>
+          <scriptItem>
+            <label>Add Parameter Camera</label>
+            <scriptCode><![CDATA[
+import hou
+hda_type_name = "MAG_InfoCamera::1.0"
+node_type = hou.nodeType(hou.objNodeTypeCategory(), hda_type_name)
+hda_def = node_type.definition()
+exec(hda_def.sections()["PythonModule"].contents())
+
+attachInfo(kwargs, 'text_info')]]>
+            </scriptCode>
+          </scriptItem>
+          <scriptItem>
+            <label>Add Important Parameter Camera</label>
+            <scriptCode><![CDATA[
+import hou
+hda_type_name = "MAG_InfoCamera::1.0"
+node_type = hou.nodeType(hou.objNodeTypeCategory(), hda_type_name)
+hda_def = node_type.definition()
+exec(hda_def.sections()["PythonModule"].contents())
+
+attachInfo(kwargs, 'text_important')]]>
+            </scriptCode>
+          </scriptItem>
+          <scriptItem>
+            <label>Add Meta Parameter Camera</label>
+            <scriptCode><![CDATA[
+import hou
+hda_type_name = "MAG_InfoCamera::1.0"
+node_type = hou.nodeType(hou.objNodeTypeCategory(), hda_type_name)
+hda_def = node_type.definition()
+exec(hda_def.sections()["PythonModule"].contents())
+
+attachInfo(kwargs, 'text_meta')]]>
+            </scriptCode>
+          </scriptItem>
+        </subMenu>
+      </menuBar>
+
+</menuDocument>
+
